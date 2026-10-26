@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MotoGP Fans | Registrar-se</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="m-0 min-h-screen bg-[#087CA7] font-sans text-white">
+
+    <main
+        class="mx-auto flex min-h-screen w-full max-w-[1920px] flex-col items-center justify-center gap-8 px-4 py-8 sm:px-6 lg:flex-row lg:justify-center lg:gap-0 lg:px-0 lg:py-10">
+
+        <section class="w-full max-w-[613px] text-center lg:mr-10 lg:text-left">
+
+            <img src="../Img/Logotip_Sessio.png" alt="Logo de MotoGP Fans"
+                class="mx-auto mb-8 block h-[100px] w-[280px] max-w-full object-contain sm:h-[120px] sm:w-[320px] lg:mx-0">
+
+            <h1 class="mb-5 text-3xl font-bold text-[#55C5E9] sm:text-4xl md:text-5xl">
+                Uneix-te a MotoGP Fans
+            </h1>
+
+            <p class="mx-auto max-w-[550px] text-base leading-relaxed text-white sm:text-lg lg:mx-0">
+                Crea el teu compte i gaudeix de totes les funcions
+                de la comunitat MotoGP Fans.
+            </p>
+
+        </section>
+
+
+        <div class="hidden w-[2.5px] self-stretch shrink-0 bg-[#55C5E9] lg:mr-[40px] lg:block" aria-hidden="true">
+        </div>
+
+        <section
+            class="w-full max-w-[650px] rounded-2xl bg-[#55C5E9] p-4 shadow-xl sm:rounded-[30px] sm:p-5 md:p-6 lg:max-w-[700px] lg:rounded-[35px] lg:px-8 lg:py-5"
+            aria-labelledby="titol-registre">
+
+            <h2 id="titol-registre" class="mb-4 text-center text-2xl font-bold text-[#087CA7] sm:text-3xl">
+                Crear un compte
+            </h2>
+
+            <form  class="flex flex-col gap-3 sm:gap-4" action="../Html_Si/Principal_Registrat.html" method="get">
+
+                <div class="flex flex-col gap-2">
+
+                    <label for="usuari" class="font-semibold text-[#064D68]">
+                        Nom d'usuari
+                    </label>
+
+                    <input id="usuari" name="usuari" type="text" placeholder="Escriu el teu nom d'usuari"
+                        autocomplete="username" minlength="3" maxlength="30" required
+                        class="h-[48px] w-full rounded-xl border-2 border-[#087CA7] bg-[#EAF8FC] px-4 text-base text-[#20242A] outline-none transition placeholder:text-gray-500 focus:border-[#FFB800] focus:ring-2 focus:ring-[#FFB800]/50 sm:h-[52px]">
+
+                </div>
+
+                <div class="flex flex-col gap-2">
+
+                    <label for="correu" class="font-semibold text-[#064D68]">
+                        Correu electrònic
+                    </label>
+
+                    <input id="correu" name="correu" type="email" placeholder="exemple@correu.com" autocomplete="email"
+                        required
+                        class="h-[48px] w-full rounded-xl border-2 border-[#087CA7] bg-[#EAF8FC] px-4 text-base text-[#20242A] outline-none transition placeholder:text-gray-500 focus:border-[#FFB800] focus:ring-2 focus:ring-[#FFB800]/50 sm:h-[52px]">
+
+                </div>
+
+                <div class="flex flex-col gap-2">
+
+                    <label for="contrasenya" class="font-semibold text-[#064D68]">
+                        Contrasenya
+                    </label>
+
+                    <input id="contrasenya" name="contrasenya" type="password" placeholder="Crea una contrasenya"
+                        autocomplete="new-password" minlength="8" required
+                        class="h-[48px] w-full rounded-xl border-2 border-[#087CA7] bg-[#EAF8FC] px-4 text-base text-[#20242A] outline-none transition placeholder:text-gray-500 focus:border-[#FFB800] focus:ring-2 focus:ring-[#FFB800]/50 sm:h-[52px]">
+
+                    <p class="text-sm text-[#064D68]">
+                        La contrasenya ha de tenir almenys 8 caràcters.
+                    </p>
+
+                </div>
+
+                <div class="flex flex-col gap-2">
+
+                    <label for="data-naixement" class="font-semibold text-[#064D68]">
+                        Data de naixement
+                    </label>
+
+                    <input id="data-naixement" name="data-naixement" type="date" autocomplete="bday" required
+                        class="h-[48px] w-full rounded-xl border-2 border-[#087CA7] bg-[#EAF8FC] px-4 text-base text-[#20242A] outline-none transition focus:border-[#FFB800] focus:ring-2 focus:ring-[#FFB800]/50 sm:h-[52px]">
+
+                </div>
+
+                <button type="submit"
+                    class="mt-1 flex min-h-[50px] w-full items-center justify-center rounded-xl bg-[#FFB800] px-6 py-2 text-lg font-bold text-black transition hover:bg-[#E5A600] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087CA7] active:scale-[0.99]">
+                    Crear compte
+                </button>
+
+                <p class="text-center text-sm text-[#064D68] sm:text-base">
+                    Ja tens un compte?
+
+                    <a href="login.html"
+                        class="font-bold text-[#064D68] underline decoration-2 underline-offset-4 transition hover:text-black">
+                        Inicia sessió
+                    </a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
