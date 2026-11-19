@@ -1,11 +1,6 @@
-
-/* Importa Tailwind CSS v4 */
 @import "tailwindcss";
-
-/* Busca las clases utilizadas en los archivos HTML */
+/* Limita la detección de clases de Tailwind al directorio del proyecto. */
 @source "../";
-
-/*CONFIGURACIÓN GENERAL*/
 
 * {
     box-sizing: border-box;
@@ -26,9 +21,13 @@ body {
     background-color: #087CA7;
 }
 
-
 .capçelera {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(12px, 1.5vw, 28px);
+
     width: calc(100% - 40px);
     max-width: 1830px;
     min-height: 114px;
@@ -36,13 +35,7 @@ body {
     padding: 19px clamp(16px, 3vw, 55px);
 
     background-color: #55C5E9;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(12px, 1.5vw, 28px);
 }
-
 
 .logo {
     display: block;
@@ -55,28 +48,25 @@ body {
     object-fit: contain;
 }
 
-
-
 .menu {
-    flex: 1 1 auto;
-    min-width: 0;
-
     display: flex;
+    flex: 1 1 auto;
     align-items: stretch;
+    min-width: 0;
 }
 
 .menu a {
+    display: flex;
     flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+
     min-width: 0;
     min-height: 76px;
     padding: 10px 5px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     background-color: #087CA7;
-    color: #F5F5F5;
+    color: #FFFFFF;
 
     text-decoration: none;
     font-size: clamp(13px, 1vw, 18px);
@@ -97,31 +87,26 @@ body {
     color: #000000;
 }
 
-
-
 .acces {
-    flex: 0 0 auto;
-
     display: flex;
+    flex: 0 0 auto;
     flex-direction: row;
     align-items: center;
     gap: clamp(8px, 1vw, 15px);
 }
 
-/* BOTÓN LOGIN */
-
 .login {
+    display: flex;
     flex: 0 1 120px;
+    align-items: center;
+    justify-content: center;
+
     width: clamp(75px, 7vw, 120px);
     min-height: 70px;
     padding: 10px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     background-color: #087CA7;
-    color: #F5F5F5;
+    color: #FFFFFF;
 
     text-decoration: none;
     text-align: center;
@@ -130,17 +115,15 @@ body {
     transition: opacity 0.3s;
 }
 
-/* BOTÓN SIGN UP */
-
 .signup {
+    display: flex;
     flex: 0 1 170px;
+    align-items: center;
+    justify-content: center;
+
     width: clamp(90px, 9vw, 170px);
     min-height: 70px;
     padding: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     background-color: #FFB800;
     color: #000000;
@@ -157,13 +140,9 @@ body {
     opacity: 0.85;
 }
 
-/* CONTENIDO PRINCIPAL*/
-
 .contenido-principal {
     width: 100%;
 }
-
-/* BANNER*/
 
 .banner {
     position: relative;
@@ -176,7 +155,7 @@ body {
     overflow: hidden;
 }
 
-.banner img {
+.banner > img {
     display: block;
     width: 100%;
     height: 100%;
@@ -184,8 +163,6 @@ body {
     object-fit: cover;
     object-position: center;
 }
-
-/* TEXTO SOBRE EL BANNER */
 
 .banner-text {
     position: absolute;
@@ -202,40 +179,107 @@ body {
 }
 
 .banner-text h1 {
-    font-size: clamp(24px, 3vw, 48px);
     margin: 0 0 16px;
+    font-size: clamp(24px, 3vw, 48px);
 }
 
 .banner-text p {
     max-width: 900px;
-    font-size: clamp(14px, 1.3vw, 20px);
     margin: 0;
+    font-size: clamp(14px, 1.3vw, 20px);
 }
 
-/* ACCESOS RÁPIDOS*/
+.banner-contenido {
+    position: absolute;
+    left: 3%;
+    top: 60%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    width: min(650px, 80%);
+}
+
+.banner-titulo {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: clamp(26px, 3vw, 42px);
+    line-height: 1.15;
+    font-weight: bold;
+    text-align: left;
+}
+
+.banner-titulo span {
+    background-color: rgba(8, 124, 167, 0.7);
+    padding: 0 5px;
+
+    /* Mantiene el fondo continuo cuando el texto ocupa varias líneas. */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    box-shadow:
+        5px 0 0 rgba(8, 124, 167, 0.7),
+        -5px 0 0 rgba(8, 124, 167, 0.7);
+}
+
+.banner-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(500px, 100%);
+    min-height: 70px;
+    padding: 14px 20px;
+
+    border-radius: 10px;
+
+    background-color: #087CA7;
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.banner-boton:hover {
+    background-color: #FFB800;
+    color: #000000;
+}
 
 .menu-secundari {
-    width: min(1720px, calc(100% - 30px));
-    max-width: 1720px;
-
-    margin: 15px auto 0;
-
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
+    width: min(1720px, calc(100% - 30px));
+    max-width: 1720px;
     min-width: 0;
+
+    margin: 15px auto 0;
 }
 
-/* TARJETAS */
-
 .menu-secundari a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     height: 178px;
     padding: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     background-color: #55C5E9;
     color: #000000;
@@ -269,9 +313,112 @@ body {
     font-size: 16px;
 }
 
-/* ADAPTACIÓN A PANTALLAS PEQUEÑAS*/
+.proxima-carrera {
+    position: relative;
+
+    width: min(1768px, calc(100% - 30px));
+    margin: 80px auto 0;
+}
+
+.proxima-carrera-titulo {
+    position: absolute;
+    left: 11px;
+    top: -66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 508px;
+    height: 61px;
+    margin: 0;
+    padding: 0 15px;
+
+    background-color: #55C5E9;
+    color: #000000;
+
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.targeta-carrera {
+    position: relative;
+
+    width: 100%;
+    height: 216px;
+
+    background-color: #55C5E9;
+}
+
+.foto-circuit {
+    position: absolute;
+    left: 55px;
+    top: 35px;
+
+    width: 286px;
+    height: 145px;
+
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.foto-circuit img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+.info-circuit {
+    position: absolute;
+    left: 392px;
+    top: 38px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nom-circuit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 280px;
+    height: 70px;
+    margin: 0;
+    padding: 10px;
+
+    background-color: #087CA7;
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.dades-circuit {
+    display: flex;
+    align-items: center;
+
+    width: 514px;
+    height: 70px;
+    margin: 0;
+    padding: 10px 15px;
+
+    background-color: #087CA7;
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
 
 @media (max-width: 1100px) {
+
     .capçelera {
         flex-wrap: wrap;
     }
@@ -283,16 +430,92 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .menu-secundari {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2px;
+    }
+
+    .menu-secundari a {
+    height: auto;
+    min-height: 178px;
+    border-bottom: 2px solid #087CA7;
     }
 
     .menu-secundari a:nth-child(2) {
         border-right: none;
     }
+
+    .banner {
+        height: 320px;
+    }
+
+    .banner-contenido {
+        left: 5%;
+        width: 90%;
+    }
+
+    .banner-titulo {
+        font-size: clamp(23px, 5vw, 32px);
+    }
+
+    .banner-boton {
+        font-size: 14px;
+    }
+
+    .proxima-carrera {
+    margin-top: 110px;
+    }
+
+    .proxima-carrera-titulo {
+        left: 0;
+        top: -60px;
+
+        width: min(508px, 100%);
+        height: 50px;
+
+        font-size: 20px;
+    }
+
+    .targeta-carrera {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        height: auto;
+        min-height: 216px;
+        padding: 20px;
+    }
+
+    .foto-circuit {
+        position: relative;
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        max-width: 286px;
+        height: 145px;
+    }
+
+    .info-circuit {
+        position: relative;
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        gap: 10px;
+    }
+
+    .nom-circuit,
+    .dades-circuit {
+        width: 100%;
+        height: auto;
+        min-height: 55px;
+    }
 }
 
 @media (max-width: 480px) {
+
     .menu-secundari {
         grid-template-columns: 1fr;
     }
@@ -307,296 +530,73 @@ body {
     }
 }
 
-/* BANNER PRINCIPAL */
-
-.banner {
-    position: relative; /* Permite colocar el título y el botón respecto al banner. */
-
-    width: calc(100% - 30px); /* Deja 15 px de margen a cada lado. */
-    max-width: 1768px; /* Evita que el banner crezca demasiado en pantallas grandes. */
-    height: 368px; /* Mantiene la altura original del banner. */
-
-    margin: 15px auto 0; /* Centra el banner y deja 15 px de margen superior. */
-    overflow: hidden; /* Recorta cualquier elemento que sobresalga del banner. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #FFB800;
+    outline-offset: 3px;
 }
 
-.banner > img {
-    display: block; /* Elimina el espacio inferior de la imagen. */
-    width: 100%; /* Ocupa todo el ancho del banner. */
-    height: 100%; /* Ocupa toda la altura del banner. */
+.saltar-contenido {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    transform: translateY(-150%);
 
-    object-fit: cover; /* Rellena el banner sin deformar la imagen. */
-    object-position: center; /* Centra la imagen dentro del banner. */
+    display: block;
+    padding: 14px 20px;
+
+    background-color: #087CA7;
+    color: #FFFFFF;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* CONTENEDOR DEL TEXTO DEL BANNER */
-
-.banner-contenido {
-    position: absolute; /* Coloca el contenido encima de la imagen. */
-
-    left: 3%; /* Sitúa el título y el botón cerca del lado izquierdo. */
-    top: 60%; /* Coloca el contenido al 60 % de la altura del banner. */
-    transform: translateY(-50%); /* Sube el contenido la mitad de su propia altura. */
-
-    display: flex; /* Permite organizar el título y el botón. */
-    flex-direction: column; /* Coloca el título encima del botón. */
-    align-items: flex-start; /* Alinea ambos elementos a la izquierda. */
-    gap: 16px; /* Deja 16 px de separación entre el título y el botón. */
-
-    width: min(650px, 80%); /* Limita el ancho a 650 px o al 80 % del banner. */
+.saltar-contenido:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid #FFB800;
+    outline-offset: 3px;
 }
 
-/* TÍTULO DEL BANNER */
-
-.banner-titulo {
-    width: 100%; /* Permite que el texto utilice el ancho disponible. */
-    margin: 0; /* Elimina el margen predeterminado del título. */
-    padding: 0; /* Evita añadir espacio alrededor de todo el título. */
-
-    display: block; /* Muestra el título como un bloque normal. */
-
-    background-color: transparent; /* Evita que todo el título tenga fondo azul. */
-    color: #FFFFFF; /* Muestra el texto en blanco. */
-
-    font-family: Arial, sans-serif; /* Mantiene la tipografía de la web. */
-    font-size: clamp(26px, 3vw, 42px); /* Adapta el texto entre 26 y 42 px. */
-    line-height: 1.15; /* Controla la separación entre las líneas. */
-    font-weight: bold; /* Destaca el título en negrita. */
-    text-align: left; /* Alinea el texto a la izquierda. */
+.peu-pagina {
+    margin-top: 80px;
+    padding: 30px 30px;
+    background-color: #55C5E9;
+    color: #000000;
+    text-align: center;
+    border-top: 5px solid #FFB800;
 }
 
-/* FONDO OSCURO SOLO DETRÁS DEL TEXTO */
-
-.banner-titulo span {
-    background-color: rgba(8, 124, 167, 0.7); /* Añade un fondo azul semitransparente. */
-
-    padding: 0 5px; /* Deja 5 px de espacio a los lados del texto. */
-
-    box-decoration-break: clone; /* Repite el fondo cuando el texto ocupa varias líneas. */
-    -webkit-box-decoration-break: clone; /* Añade compatibilidad con navegadores basados en WebKit. */
-
-    box-shadow:
-        5px 0 0 rgba(8, 124, 167, 0.7), /* Extiende el fondo 5 px por la derecha. */
-        -5px 0 0 rgba(8, 124, 167, 0.7); /* Extiende el fondo 5 px por la izquierda. */
+.peu-pagina h2 {
+    margin: 0;
+    text-align: left;
 }
 
-/* BOTÓN DE CLASIFICACIÓN */
-
-.banner-boton {
-    width: min(500px, 100%); /* Limita el ancho a 500 px o al espacio disponible. */
-    min-height: 70px; /* Establece una altura mínima para el botón. */
-    padding: 14px 20px; /* Añade espacio interior alrededor del texto. */
-
-    display: flex; /* Permite centrar el texto dentro del botón. */
-    align-items: center; /* Centra verticalmente el texto. */
-    justify-content: center; /* Centra horizontalmente el texto. */
-    border-radius: 10px; /* Redondea ligeramente las esquinas del botón. */
-
-    background-color: #087CA7; /* Utiliza el azul principal de la web. */
-    color: #FFFFFF; /* Muestra el texto en blanco. */
-
-    font-family: Arial, sans-serif; /* Mantiene la tipografía de la página. */
-    font-size: 16px; /* Establece el tamaño del texto. */
-    line-height: 1.4; /* Mejora la lectura si el texto ocupa varias líneas. */
-    font-weight: bold; /* Destaca el texto del botón. */
-    text-align: center; /* Centra el texto dentro del botón. */
-    text-decoration: none; /* Elimina el subrayado del enlace. */
-
-    transition: background-color 0.3s, color 0.3s; /* Suaviza el cambio de color. */
+.peu-pagina nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: -25px 0 30px;
 }
 
-.banner-boton:hover {
-    background-color: #FFB800; /* Cambia el fondo a amarillo al pasar el cursor. */
-    color: #000000; /* Cambia el texto a negro durante el efecto hover. */
+.peu-pagina a {
+    color: #000000;
+    text-decoration: underline;
 }
 
-/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
-
-@media (max-width: 768px) {
-
-    .banner {
-        height: 320px; /* Reduce la altura del banner en móviles. */
-    }
-
-    .banner-contenido {
-        left: 5%; /* Ajusta la posición del contenido en móviles. */
-        width: 90%; /* Aprovecha mejor el ancho disponible. */
-    }
-
-    .banner-titulo {
-        font-size: clamp(23px, 5vw, 32px); /* Reduce el tamaño del título en móviles. */
-    }
-
-    .banner-boton {
-        font-size: 14px; /* Reduce el tamaño del texto del botón. */
-    }
+.peu-pagina a:hover {
+    color: #087CA7;
 }
 
-
-/* PRÒXIMA CARRERA */
-
-.proxima-carrera {
-    position: relative; /* Permite posicionar el título y la tarjeta respecto a esta sección. */
-
-    width: min(1768px, calc(100% - 30px)); /* Ancho máximo de 1768 px con márgenes laterales en pantallas pequeñas. */
-margin: 80px auto 0; /* Baja toda la sección 14 px, manteniendo el centrado horizontal. */}
-
-/* TÍTULO PRÒXIMA CARRERA */
-
-.proxima-carrera-titulo {
-    position: absolute; /* Permite colocar el título encima de la tarjeta. */
-    left: 11px; /* Posición relativa: 87 - 76 = 11 px desde la tarjeta. */
-    top: -66px; /* Coloca el título 66 px por encima de la tarjeta. */
-
-    width: 508px; /* Ancho solicitado: 508 px. */
-    height: 61px; /* Alto solicitado: 61 px. */
-    margin: 0; /* Elimina el margen predeterminado del h2. */
-    padding: 0 15px; /* Añade espacio interior a los lados del texto. */
-
-    display: flex; /* Permite centrar el texto dentro del título. */
-    align-items: center; /* Centra verticalmente el texto. */
-    justify-content: center; /* Centra horizontalmente el texto. */
-
-    background-color: #55C5E9; /* Fondo azul celeste de la web. */
-    color: #000000; /* Texto negro. */
-
-    font-family: Arial, sans-serif; /* Mantiene la tipografía de la página. */
-    font-size: 24px; /* Tamaño del título. */
-    font-weight: bold; /* Destaca el título. */
-    text-align: center; /* Centra el texto. */
+.peu-pagina p {
+    margin: 12px 0;
 }
 
-/* TARJETA PRINCIPAL DE LA CARRERA */
-
-.targeta-carrera {
-    position: relative; /* Permite posicionar la fotografía y los datos dentro de la tarjeta. */
-
-    width: 100%; /* Ocupa el ancho disponible de la sección. */
-    height: 216px; /* Alto solicitado: 216 px. */
-
-    background-color: #55C5E9; /* Fondo azul celeste de la tarjeta. */
+.peu-pagina p:last-child {
+    border-top: 1px solid #000000;
+    padding-top: 12px;
 }
-
-/* FOTOGRAFÍA DEL CIRCUITO */
-
-.foto-circuit {
-    position: absolute; /* Permite colocar la fotografía en la posición indicada. */
-    left: 55px; /* Posición relativa: 131 - 76 = 55 px. */
-    top: 35px; /* Posición relativa: 812 - 777 = 35 px. */
-    
-    width: 286px; /* Ancho solicitado: 286 px. */
-    height: 145px; /* Alto solicitado: 145 px. */
-
-    background-color: #FFFFFF; /* Fondo blanco mientras no haya una imagen disponible. */
-    overflow: hidden; /* Evita que la fotografía sobresalga de su contenedor. */
-}
-
-.foto-circuit img {
-    display: block; /* Evita el espacio inferior de las imágenes en línea. */
-    width: 100%; /* Ocupa todo el ancho de la fotografía. */
-    height: 100%; /* Ocupa toda la altura de la fotografía. */
-    
-    object-fit: contain; /* Recorta la imagen si es necesario sin deformarla. */
-    object-position: center; /* Centra la fotografía dentro del contenedor. */
-}
-
-/* INFORMACIÓN DEL CIRCUITO */
-
-.info-circuit {
-    position: absolute; /* Permite colocar los datos junto a la fotografía. */
-    left: 392px; /* Posición relativa: 468 - 76 = 392 px. */
-    top: 38px; /* Posición relativa: 815 - 777 = 38 px. */
-
-    display: flex; /* Permite organizar los datos verticalmente. */
-    flex-direction: column; /* Coloca el nombre encima de la fecha y los datos. */
-    gap: 12px; /* Deja 12 px de separación entre ambos elementos. */
-}
-
-/* NOMBRE DEL CIRCUITO */
-
-.nom-circuit {
-    width: 280px; /* Ancho solicitado: 280 px. */
-    height: 70px; /* Alto solicitado: 70 px. */
-    margin: 0; /* Elimina el margen predeterminado del h3. */
-    padding: 10px; /* Añade espacio interior. */
-
-    display: flex; /* Permite centrar el nombre. */
-    align-items: center; /* Centra verticalmente el texto. */
-    justify-content: center; /* Centra horizontalmente el texto. */
-
-    background-color: #087CA7; /* Fondo Azul. */
-    color: #ffffff; /* Texto blanco. */
-
-    font-family: Arial, sans-serif; /* Mantiene la tipografía de la web. */
-    font-size: 20px; /* Tamaño del nombre del circuito. */
-    font-weight: normal; /* Evita que el nombre aparezca demasiado grueso. */
-}
-
-/* FECHA Y DATOS DEL CIRCUITO */
-
-.dades-circuit {
-    width: 514px; /* Ancho solicitado: 514 px. */
-    height: 70px; /* Alto solicitado: 70 px. */
-    margin: 0; /* Elimina el margen predeterminado del párrafo. */
-    padding: 10px 15px; /* Añade espacio interior al texto. */
-
-    display: flex; /* Permite centrar el contenido. */
-    align-items: center; /* Centra verticalmente el texto. */
-
-    background-color: #087CA7; /* Fondo Azul. */
-    color: #ffffff; /* Texto blanco. */
-
-    font-family: Arial, sans-serif; /* Mantiene la tipografía de la web. */
-    font-size: 18px; /* Tamaño del texto informativo. */
-}
-
-/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
-
-@media (max-width: 768px) {
-
-    .proxima-carrera {
-        margin-top: 60px; /* Ajusta el espacio superior en móviles. */
-    }
-
-    .proxima-carrera-titulo {
-        left: 0; /* Alinea el título con el inicio de la sección. */
-        top: -60px; /* Sitúa el título encima de la tarjeta. */
-        width: min(508px, 100%); /* Evita que el título salga de la pantalla. */
-        height: 50px; /* Reduce la altura del título. */
-        font-size: 20px; /* Reduce el tamaño del texto. */
-    }
-
-    .targeta-carrera {
-        height: auto; /* Permite que la tarjeta crezca según su contenido. */
-        min-height: 216px; /* Mantiene una altura mínima. */
-        padding: 20px; /* Añade espacio interior en móviles.        */
-        display: flex; /* Permite distribuir la fotografía y los datos. */
-        flex-direction: column; /* Coloca los elementos uno debajo del otro. */
-        gap: 15px; /* Separa los elementos. */
-    }
-
-    .foto-circuit {
-        position: relative; /* Deja de usar coordenadas absolutas en móviles. */
-        left: auto; /* Elimina la posición izquierda fija. */
-        top: auto; /* Elimina la posición superior fija. */
-        width: 100%; /* Ocupa el ancho disponible. */
-        max-width: 286px; /* Conserva el ancho máximo de la fotografía. */
-        height: 145px; /* Mantiene la altura de la fotografía. */
-    }
-
-    .info-circuit {
-        position: relative; /* Coloca los datos dentro del flujo normal. */
-        left: auto; /* Elimina la posición izquierda fija. */
-        top: auto; /* Elimina la posición superior fija. */
-        width: 100%; /* Aprovecha el ancho disponible. */
-        gap: 10px; /* Separa el nombre de los datos. */
-    }
-
-    .nom-circuit,
-    .dades-circuit {
-        width: 100%; /* Evita que los textos sobresalgan de la pantalla. */
-        height: auto; /* Permite que el contenido determine la altura. */
-        min-height: 55px; /* Conserva un tamaño cómodo para leer. */
-    }
-}
-
